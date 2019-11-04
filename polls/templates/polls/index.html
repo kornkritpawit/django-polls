@@ -1,3 +1,11 @@
+{% if user.is_authenticated %}
+   Welcome back, 
+   {{ user.username }}
+{% else %}
+   Please <a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+{% comment %} Please <a href="{% url 'login'%}?next={{request.path}}">Login</a> {% endcomment %}
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}

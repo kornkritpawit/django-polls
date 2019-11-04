@@ -11,11 +11,12 @@ class Question(models.Model):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
-    def vote_count(id):
+    def vote_count(self):
         vote = 0
-        for choice in Question.objects.get(id=id).choice_set.all():
+        for choice in self.objects.choice_set.all():
             vote += choice.votes
         return vote 
+    # total = models.IntegerField(auto_now = self.vote_count())
     
         
 

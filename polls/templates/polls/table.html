@@ -1,0 +1,20 @@
+<h2>All questions</h2>
+<br>
+<table>
+    <tr>
+    <th>Question</th>
+    <th>Choice</th>
+    <th>vote</th>
+    </tr>
+
+{% for question in all_question %}
+<td>{{question.question_text}}</td>
+    {% for choice in question.choice_set.all %}
+    <tr>
+    <td></td>
+    <td>{{choice.choice_text}}</td>
+    <td>{{choice.votes}}</td>
+    </tr>
+    {% endfor %}
+{% endfor %}
+<table>
