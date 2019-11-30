@@ -26,7 +26,8 @@ SECRET_KEY = config('SECRET_KEY', default=True)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS',default = [])
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS',default = [])
+ALLOWED_HOSTS =[]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
